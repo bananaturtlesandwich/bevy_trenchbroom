@@ -89,7 +89,7 @@ impl PhysicsPlugin {
                 ));
             }
 
-            commands.entity(entity).insert(Collider::compound(colliders));
+            commands.entity(entity).insert((Collider::compound(colliders), RigidBody::Static));
         }
     }
 
@@ -127,7 +127,7 @@ impl PhysicsPlugin {
                 continue;
             };
 
-            commands.entity(entity).insert(collider);
+            commands.entity(entity).insert((collider, RigidBody::Static));
         }
     }
 }
